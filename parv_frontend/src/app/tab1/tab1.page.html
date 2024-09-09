@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Shoes Catalog
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let shoe of shoes">
+      <ion-label> I have a {{ shoe.color | uppercase }} color {{ shoe.brand | uppercase }} shoes. ( Size: {{ shoe.size }} ) </ion-label>
+      <ion-button (click)="edit(shoe)">Edit</ion-button>
+      <ion-button color="dark" (click)="deleteAShoe(shoe.id)">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngIf="updateForm">
+    <ion-card-header>
+      <ion-card-title>Update Shoe</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">Size:</ion-label>
+        <ion-input type="number" [(ngModel)]="editShoe.size"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Brand:</ion-label>
+        <ion-input [(ngModel)]="editShoe.brand"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Color:</ion-label>
+        <ion-input [(ngModel)]="editShoe.color"></ion-input>
+      </ion-item>
+      <ion-button (click)="updateAShoe()">Save</ion-button>
+      <ion-button (click)="cancelEdit()">Cancel</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "parv_frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

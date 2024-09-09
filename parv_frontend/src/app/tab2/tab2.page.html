@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Add Shoe
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (submit)="addShoe()">
+    <ion-item>
+      <ion-label position="floating">Size:</ion-label><br>
+      <ion-input type="number" [(ngModel)]="size" name="size" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Brand:</ion-label><br>
+      <ion-input [(ngModel)]="brand" name="brand" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Color:</ion-label><br>
+      <ion-input [(ngModel)]="color" name="color" required></ion-input>
+    </ion-item>
+    <ion-button type="submit" expand="full" color="dark">Add Shoe</ion-button>
+  </form>
+</ion-content>
